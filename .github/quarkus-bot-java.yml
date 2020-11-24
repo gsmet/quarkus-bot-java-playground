@@ -58,9 +58,9 @@ triage:
         - extensions/hibernate-reactive
     - labels: [area/hibernate-orm, area/persistence]
       expression: |
-              matches(titleBody, "hibernate")
-              && !matches(titleBody, "hibernate.validator")
-              && !matches(titleBody, "hibernate.search")
+              matches("hibernate", titleBody)
+              && !matches("hibernate.validator", titleBody)
+              && !matches("hibernate.search", titleBody)
       notify: [gsmet, Sanne]
       directories:
         - extensions/hibernate-orm/
