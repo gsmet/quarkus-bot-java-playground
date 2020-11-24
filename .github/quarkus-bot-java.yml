@@ -4,32 +4,32 @@
 triage:
   rules:
     - labels: [area/amazon-lambda]
-      title: "(?i).*lambda.*"
+      title: ".*lambda.*"
       notify: [patriot1burke, matejvasek]
       directories:
         - extensions/amazon-lambda
         - integration-tests/amazon-lambda
     - labels: [area/persistence]
-      titleBody: "(?i).*db2.*"
+      titleBody: ".*db2.*"
       notify: [aguibert]
       directories:
         - extensions/reactive-db2-client/
         - extensions/jdbc/jdbc-db2/
     - labels: [area/funqy]
-      titleBody: "(?i).*funqy.*"
+      titleBody: ".*funqy.*"
       notify: [patriot1burke, matejvasek]
       directories:
         - extensions/funqy/
     - labels: [area/devmode]
       titleBody: "dev mode"
     - labels: [area/gradle]
-      title: "(?i).*gradle.*"
+      title: ".*gradle.*"
       notify: [quarkusio/devtools, glefloch]
       directories:
         - devtools/gradle/
         - integration-tests/gradle/
     - labels: [area/maven]
-      title: "(?i).*maven.*"
+      title: ".*maven.*"
       notify: [quarkusio/devtools]
       directories:
         - devtools/maven/
@@ -38,13 +38,13 @@ triage:
         - integration-tests/maven/
         - test-framework/maven/
     - labels: [area/jbang]
-      titleBody: "(?i).*jbang.*"
+      titleBody: ".*jbang.*"
       notify: [quarkusio/devtools, maxandersen]
       directories:
         - "**/*JBang*"
         - "**/*jbang*"
     - labels: [area/codestarts]
-      titleBody: "(?i).*codestart.*"
+      titleBody: ".*codestart.*"
       notify: [quarkusio/devtools, ia3andy]
       directories:
         - independent-projects/tools/codestarts/
@@ -52,15 +52,15 @@ triage:
         - devtools/platform-descriptor-json/src/main/resources/codestarts/
         - devtools/platform-descriptor-json/src/main/resources/templates/
     - labels: [area/hibernate-reactive, area/persistence]
-      titleBody: "(?i).*hibernate.reactive.*"
+      titleBody: ".*hibernate.reactive.*"
       notify: [aguibert, gavinking, Sanne]
       directories:
         - extensions/hibernate-reactive
     - labels: [area/hibernate-orm, area/persistence]
       expression: |
-              matches(titleBody, "(?i).*hibernate.*")
-              && !matches(titleBody, "(?i).*hibernate.validator.*")
-              && !matches(titleBody, "(?i).*hibernate.search.*")
+              matches(titleBody, ".*hibernate.*")
+              && !matches(titleBody, ".*hibernate.validator.*")
+              && !matches(titleBody, ".*hibernate.search.*")
       notify: [gsmet, Sanne]
       directories:
         - extensions/hibernate-orm/
@@ -75,7 +75,7 @@ triage:
         - integration-tests/jpa/
         - integration-tests/infinispan-cache-jpa/
     - labels: [area/hibernate-search]
-      titleBody: "(?i).*hibernate.search.*"
+      titleBody: ".*hibernate.search.*"
       notify: [gsmet, yrodiere]
       directories:
         - extensions/hibernate-search-orm-elasticsearch/
@@ -83,30 +83,30 @@ triage:
         - extensions/elasticsearch-rest-client/
         - extensions/elasticsearch-rest-client-common/
     - labels: [area/elasticsearch]
-      titleBody: "(?i).*elasticsearch.*"
+      titleBody: ".*elasticsearch.*"
       notify: [gsmet, yrodiere, loicmathieu]
       directories:
         - extensions/elasticsearch
         - integration-tests/elasticsearch
     - labels: [area/hibernate-validator]
-      titleBody: "(?i).*hibernate.validator.*"
+      titleBody: ".*hibernate.validator.*"
       notify: [gsmet]
       directories:
         - extensions/hibernate-validator/
         - integration-tests/hibernate-validator/
     - labels: [area/jaeger]
-      titleBody: "(?i).*jaeger.*"
+      titleBody: ".*jaeger.*"
       notify: [kenfinnigan, pavolloffay]
       directories:
         - extensions/jaeger/
     - labels: [area/kotlin]
-      titleBody: "(?i).*kotlin.*"
+      titleBody: ".*kotlin.*"
       notify: [evanchooly]
       directories:
         - extensions/kotlin/
         - integration-tests/kotlin/
     - labels: [area/mongodb]
-      titleBody: "(?i).*mongo.*"
+      titleBody: ".*mongo.*"
       notify: [loicmathieu, evanchooly]
       directories:
         - extensions/mongodb-client/
@@ -114,50 +114,50 @@ triage:
         - integration-tests/mongodb-panache/
         - extensions/panache/mongodb-panache/
     - labels: [area/openapi, area/smallrye]
-      title: "(?i).*openapi.*"
+      title: ".*openapi.*"
       notify: [EricWittmann, MikeEdgar, phillip-kruger]
       directories:
         - extensions/smallrye-openapi
     - labels: [area/graphql, area/smallrye]
-      title: "(?i).*graphql.*"
+      title: ".*graphql.*"
       notify: [phillip-kruger, jmartisk]
       directories:
         - extensions/smallrye-graphql/
         - extensions/vertx-graphql/
         - integration-tests/vertx-graphql/
     - labels: [area/tracing, area/smallrye]
-      titleBody: "(?i).*(trace|tracing|telemetry).*"
+      titleBody: ".*(trace|tracing|telemetry).*"
       notify: [kenfinnigan, Ladicek]
       directories:
         - extensions/smallrye-opentracing/
     - labels: [area/security, area/smallrye]
-      titleBody: "(?i).*jwt.*"
+      titleBody: ".*jwt.*"
       notify: [sberyozkin]
     - labels: [area/security]
-      titleBody: "(?i).*security.*"
+      titleBody: ".*security.*"
       notify: [sberyozkin]
     - labels: [area/metrics, area/smallrye]
-      title: "(?i).*metrics.*"
+      title: ".*metrics.*"
       notify: [jmartisk]
       directories:
         - extensions/smallrye-metrics
     - labels: [area/metrics]
-      title: "(?i).*micrometer.*"
+      title: ".*micrometer.*"
       notify: [ebullient]
       directories:
         - extensions/micrometer
     - labels: [area/health, area/smallrye]
-      title: "(?i).*health.*"
+      title: ".*health.*"
       notify: [jmartisk, xstefank]
       directories:
         - extensions/smallrye-health/
     - labels: [area/fault-tolerance, area/smallrye]
-      title: "(?i).*fault.tolerance.*"
+      title: ".*fault.tolerance.*"
       notify: [Ladicek]
       directories:
         - extensions/smallrye-fault-tolerance/
     - labels: [area/mutiny, area/smallrye]
-      title: "(?i).*mutiny.*"
+      title: ".*mutiny.*"
       notify: [cescoffier, jponge]
       directories:
         - extensions/mutiny/
@@ -165,42 +165,42 @@ triage:
         - extensions/resteasy-mutiny-common/
         - extensions/resteasy-mutiny/
     - labels: [area/panache]
-      titleBody: "(?i).*panache.*"
+      titleBody: ".*panache.*"
       notify: [FroMage, loicmathieu]
       directories:
         - extensions/panache/
         - integration-tests/hibernate-orm-panache/
     - labels: [area/qute]
-      titleBody: "(?i).*qute.*"
+      titleBody: ".*qute.*"
       notify: [mkouba]
       directories:
         - extensions/qute/
         - extensions/resteasy-qute/
     - labels: [area/reactive-messaging, area/smallrye]
-      titleBody: "(?i).*reactive.messaging.*"
+      titleBody: ".*reactive.messaging.*"
       notify: [cescoffier, kenfinnigan, phillip-kruger]
       directories:
         - extensions/smallrye-reactive-messaging
     - labels: [area/rest-client]
-      titleBody: "(?i).*rest.client.*"
+      titleBody: ".*rest.client.*"
       notify: [phillip-kruger]
       directories:
         - extensions/rest-client/
     - labels: [area/smallrye]
-      title: "(?i).*smallrye.*"
+      title: ".*smallrye.*"
       notify: [kenfinnigan, phillip-kruger, jmartisk, radcortez, Ladicek]
       directories:
         - extensions/smallrye-
     - labels: [area/spring]
-      titleBody: "(?i).*spring.*"
+      titleBody: ".*spring.*"
       notify: [geoand]
       directories:
         - extensions/spring-
         - integration-tests/spring-
     - labels: [env/windows]
-      titleBody: "(?i).*windows.*"
+      titleBody: ".*windows.*"
     - labels: [area/kubernetes]
-      titleBody: "(?i).*kubernetes.*"
+      titleBody: ".*kubernetes.*"
       notify: [geoand]
       directories:
         - extensions/kubernetes/
@@ -208,73 +208,73 @@ triage:
         - integration-tests/kubernetes/
         - integration-tests/kubernetes-client/
     - labels: [area/kubernetes]
-      titleBody: "(?i).*minikube.*"
+      titleBody: ".*minikube.*"
       notify: [geoand]
     - labels: [area/kubernetes]
-      titleBody: "(?i).*openshift.*"
+      titleBody: ".*openshift.*"
       notify: [geoand]
     - labels: [area/kubernetes]
-      titleBody: "(?i).*knative.*"
+      titleBody: ".*knative.*"
       notify: [geoand]
     - labels: [area/container-image]
-      titleBody: "(?i).*jib.*"
+      titleBody: ".*jib.*"
       notify: [geoand]
     - labels: [area/kafka]
       notify: [cescoffier]
-      title: "(?i).*kafka.*"
+      title: ".*kafka.*"
       directories:
         - extensions/kafka-client/
         - integration-tests/kafka/
     - labels: [area/kafka-streams]
-      titleBody: "(?i).*k(afka)?(\\s|-)?stream.*"
+      titleBody: ".*k(afka)?(\\s|-)?stream.*"
       notify: [gunnarmorling, rquinio]
       directories:
         - extensions/kafka-streams
         - integration-tests/kafka-streams/
     - labels: [area/infinispan]
-      titleBody: "(?i).*infinispan.*"
+      titleBody: ".*infinispan.*"
       notify: [karesti, wburns]
       directories:
         - extensions/infinispan-client/
         - integration-tests/infinispan-cache-jpa/
         - integration-tests/infinispan-client/
     - labels: [area/grpc]
-      titleBody: "(?i).*grpc.*"
+      titleBody: ".*grpc.*"
       notify: [michalszynkiewicz, cescoffier]
       directories:
         - extensions/grpc-common
         - extensions/grpc
     - labels: [area/scheduler]
-      titleBody: "(?i).*schedule(r)?.*"
+      titleBody: ".*schedule(r)?.*"
       notify: [mkouba]
       directories:
         - extensions/scheduler/
     - labels: [area/scheduler]
-      titleBody: "(?i).*quartz.*"
+      titleBody: ".*quartz.*"
       notify: [mkouba, machi1990]
       directories:
         - extensions/quartz/
         - integration-tests/quartz/
     - labels: [area/redis]
-      titleBody: "(?i).*redis.*"
+      titleBody: ".*redis.*"
       notify: [machi1990, gsmet, cescoffier]
       directories:
         - extensions/redis-client/
         - integration-tests/redis-client/
     - labels: [area/arc]
-      title: "(?i).*\\b(arc|cdi|injection)\\b.*"
+      title: ".*\\b(arc|cdi|injection)\\b.*"
       notify: [mkouba, manovotn]
       directories:
         - extensions/arc/
         - independent-projects/arc/
     - labels: [area/google-cloud-functions]
-      titleBody: "(?i).*google.cloud.*"
+      titleBody: ".*google.cloud.*"
       notify: [loicmathieu]
       directories:
         - extensions/google-cloud-functions
         - integration-tests/google-cloud-functions
     - labels: [area/mandrel]
-      titleBody: "(?i).*mandrel.*"
+      titleBody: ".*mandrel.*"
       notify: [galderz, zakkak]
     - labels: [area/artemis]
       directories:
@@ -283,7 +283,7 @@ triage:
         - integration-tests/artemis-core/
         - integration-tests/artemis-jms/
     - labels: [area/cache]
-      title: "(?i).*cache.*"
+      title: ".*cache.*"
       notify: [gwenneg]
       directories:
         - extensions/cache/
@@ -316,7 +316,7 @@ triage:
       directories:
         - .github/
     - labels: [area/jaxb]
-      titleBody: "(?i).*jaxb.*"
+      titleBody: ".*jaxb.*"
       notify: [gsmet]
       directories:
         - extensions/jaxb/
@@ -335,13 +335,13 @@ triage:
         - integration-tests/narayana-jta/
         - integration-tests/narayana-stm/
     - labels: [area/neo4j]
-      titleBody: "(?i).*neo4j.*"
+      titleBody: ".*neo4j.*"
       notify: [michael-simons]
       directories:
         - extensions/neo4j/
         - integration-tests/neo4j/
     - labels: [area/oidc]
-      titleBody: "(?i).*oidc.*"
+      titleBody: ".*oidc.*"
       notify: [sberyozkin, pedroigor]
       directories:
         - extensions/oidc/
@@ -394,7 +394,7 @@ triage:
       directories:
         - extensions/undertow-websockets/
     - labels: [area/swagger-ui]
-      title: "(?i).*swagger.*"
+      title: ".*swagger.*"
       notify: [phillip-kruger]
       directories:
         - extensions/swagger-ui/
@@ -405,13 +405,13 @@ triage:
         - extensions/vertx-keycloak/
         - integration-tests/elytron
     - labels: [area/flyway]
-      title: "(?i).*flyway.*"
+      title: ".*flyway.*"
       notify: [cristhiank, geoand, gastaldi, gsmet]
       directories:
         - extensions/flyway/
         - integration-tests/flyway/
     - labels: [area/liquibase]
-      title: "(?i).*liquibase.*"
+      title: ".*liquibase.*"
       notify: [andrejpetras, geoand, gsmet]
       directories:
         - extensions/liquibase/
