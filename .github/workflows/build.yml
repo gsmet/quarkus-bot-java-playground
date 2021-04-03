@@ -12,6 +12,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   attach-pr-id:
+    runs-on: ubuntu-latest
     name: Attach pull request number
     if: github.event_name == 'pull_request'
     steps:
