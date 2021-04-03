@@ -1,4 +1,4 @@
-name: CI
+name: Upload Artifacts
 
 # Controls when the action will run. 
 on:
@@ -18,6 +18,7 @@ jobs:
       matrix:
         # test against latest update of each major Java version, as well as specific updates of LTS versions:
         java: [ 11, 16 ]
+      fail-fast: false
     name: Build Java ${{ matrix.java }}
     steps:
       - uses: actions/checkout@v2
