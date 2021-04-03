@@ -19,13 +19,12 @@ jobs:
       - name: Create file
         shell: bash
         run: |
-          echo ${{ github.event.number }}
-          echo -n ${{ github.event.number }} > pull_request_number
+          echo -n ${{ github.event.number }} > pull-request-number
       - name: Upload pull request number
         uses: actions/upload-artifact@v2
         with:
-          name: pull_request_number
-          path: pull_request_number
+          name: pull-request-number-${{ github.event.number }}
+          path: pull-request-number
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
