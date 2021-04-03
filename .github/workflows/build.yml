@@ -43,5 +43,5 @@ jobs:
         if: failure()
         with:
           name: surefire-reports-jvm-${{matrix.java}}
-          path: **/target/surefire-reports/TEST-*.xml
+          path: "**/target/surefire-reports/TEST-*.xml"
 #          path: ${{ steps.get-temp-directory.outputs.name }}/surefire-reports
