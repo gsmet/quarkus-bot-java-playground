@@ -18,7 +18,9 @@ jobs:
     steps:
       - name: Create file
         shell: bash
-        run: echo $GITHUB_EVENT_NUMBER > pull_request_number
+        run: |
+          echo ${{ github.event.number }}
+          echo -n ${{ github.event.number }} > pull_request_number
       - name: Upload pull request number
         uses: actions/upload-artifact@v2
         with:
