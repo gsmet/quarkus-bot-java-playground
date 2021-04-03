@@ -9,6 +9,9 @@ public class Module1Test1Test {
 
     @Test
     public void testFailure() {
+        System.out.println("move line");
+        System.out.println("move line");
+        System.out.println("move line");
         fail();
     }
 
