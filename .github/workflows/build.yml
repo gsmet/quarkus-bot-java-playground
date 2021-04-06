@@ -31,32 +31,29 @@ jobs:
     strategy:
       matrix:
         # test against latest update of each major Java version, as well as specific updates of LTS versions:
-        java: [ 11, 16 ]
+        java:
+          - {
+            version: 11,
+            name: "JDK11"
+          }
+          - {
+            version: 16,
+            name: "JDK16"
+          }
+
       fail-fast: false
-    name: Build Java ${{ matrix.java }}
+    name: Build Java ${{ matrix.java.name.lowercase }}
     steps:
       - uses: actions/checkout@v2
       - name: Setup java
         uses: actions/setup-java@v1
         with:
-          java-version: ${{ matrix.java }}
+          java-version: ${{ matrix.java.version }}
       - name: Build with Maven
         run: mvn -B clean install --fail-at-end
-#      - name: Get temp directory
-#        id: get-temp-directory
-#        run: |
-#          echo "::set-output name=name::$(mktemp -d --suffix '-surefire-reports')"
-#      - name: Prepare failure archive (if maven failed)
-#        if: failure()
-#        shell: bash
-#        run: |
-#          reportsdir=${{ steps.get-temp-directory.outputs.name }}/surefire-reports
-#          mkdir ${reportsdir}
-#          find . -name 'TEST-*.xml' -exec cp --parents {} ${reportsdir} \;
       - name: Upload failure Archive (if maven failed)
         uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: "surefire-reports-Build Java ${{ matrix.java }}"
           path: "**/target/surefire-reports/TEST-*.xml"
-#          path: ${{ steps.get-temp-directory.outputs.name }}/surefire-reports
