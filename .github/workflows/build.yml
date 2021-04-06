@@ -43,6 +43,6 @@ jobs:
         uses: actions/upload-artifact@v2
         if: failure()
         with:
-          name: surefire-reports-jvm-${{matrix.java}}
+          name: "surefire-reports-Build Java ${{ matrix.java }}"
           path: "**/target/surefire-reports/TEST-*.xml"
 #          path: ${{ steps.get-temp-directory.outputs.name }}/surefire-reports
