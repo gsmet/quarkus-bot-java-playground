@@ -76,7 +76,7 @@ triage:
         - integration-tests/infinispan-cache-jpa/
     - labels: [area/hibernate-search]
       titleBody: "hibernate.search"
-      notify: [gsmet, yrodiere]
+      notify: [gsmet, non-existing-user-hsearch1, non-existing-user-hsearch2]
       directories:
         - extensions/hibernate-search-orm-elasticsearch/
         - integration-tests/hibernate-search-orm-elasticsearch/
@@ -90,7 +90,7 @@ triage:
         - integration-tests/elasticsearch
     - labels: [area/hibernate-validator]
       titleBody: "hibernate.validator"
-      notify: [gsmet]
+      notify: [gsmet, non-existing-user-hv]
       directories:
         - extensions/hibernate-validator/
         - integration-tests/hibernate-validator/
