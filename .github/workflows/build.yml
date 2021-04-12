@@ -67,6 +67,8 @@ jobs:
     name: "Initial JDK 11 Build"
     steps:
       - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: exit 1
   native-green:
     runs-on: ubuntu-latest
     name: Native Tests - Green
