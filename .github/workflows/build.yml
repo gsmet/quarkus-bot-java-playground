@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v2
         if: failure()
         with:
-          name: "surefire-reports-Build Java ${{ matrix.java.name }}"
+          name: "surefire-reports-JVM Tests - JDK ${{matrix.java.name}}"
           path: "**/target/surefire-reports/TEST-*.xml"
   jvm-green:
     runs-on: ubuntu-latest
