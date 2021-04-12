@@ -62,6 +62,11 @@ jobs:
     name: JVM Tests - JDK green
     steps:
       - uses: actions/checkout@v2
+  jvm-initial:
+    runs-on: ubuntu-latest
+    name: "Initial JDK 11 Build"
+    steps:
+      - uses: actions/checkout@v2
   native-green:
     runs-on: ubuntu-latest
     name: Native Tests - Green
