@@ -1,3 +1,3 @@
 # quarkus-bot-java-playground
 
-pull-request1-39
+pull-request1-40
