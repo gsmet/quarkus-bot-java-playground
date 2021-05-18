@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: "${{ github.workflow }} && ${{ github.event_name }} && ${{ github.head_ref }}"
+  group: "workflow = ${{ github.workflow }} && ref = ${{ github.event.ref }} && pr = ${{ github.event.pull_request.id }}"
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
