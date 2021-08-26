@@ -23,6 +23,9 @@
         <module>module1</module>
         <module>module2</module>
         <module>module3</module>
+        <module>module4</module>
+        <module>module5</module>
+        <module>module6</module>
     </modules>
 
     <dependencyManagement>
@@ -53,6 +56,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <extensions>
+            <extension>
+                <groupId>io.quarkus.bot</groupId>
+                <artifactId>build-reporting-maven-extension</artifactId>
+                <version>1.0.2</version>
+            </extension>
+        </extensions>
     </build>
 
     <licenses>
