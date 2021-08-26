@@ -11,38 +11,73 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
+  attach-pr-id:
+    runs-on: ubuntu-latest
+    name: Attach pull request number
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Create file
+        shell: bash
+        run: |
+          echo -n ${{ github.event.number }} > pull-request-number
+      - name: Upload pull request number
+        uses: actions/upload-artifact@v2
+        with:
+          name: pull-request-number-${{ github.event.number }}
+          path: pull-request-number
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     strategy:
       matrix:
         # test against latest update of each major Java version, as well as specific updates of LTS versions:
-        java: [ 11, 16 ]
+        java:
+          - {
+            version: 11,
+            name: "JDK11"
+          }
+          - {
+            version: 16,
+            name: "JDK16"
+          }
+
       fail-fast: false
-    name: Build Java ${{ matrix.java }}
+    name: JVM Tests - JDK ${{matrix.java.name}}
     steps:
       - uses: actions/checkout@v2
       - name: Setup java
         uses: actions/setup-java@v1
         with:
-          java-version: ${{ matrix.java }}
+          java-version: ${{ matrix.java.version }}
       - name: Build with Maven
         run: mvn -B clean install --fail-at-end
-#      - name: Get temp directory
-#        id: get-temp-directory
-#        run: |
-#          echo "::set-output name=name::$(mktemp -d --suffix '-surefire-reports')"
-#      - name: Prepare failure archive (if maven failed)
-#        if: failure()
-#        shell: bash
-#        run: |
-#          reportsdir=${{ steps.get-temp-directory.outputs.name }}/surefire-reports
-#          mkdir ${reportsdir}
-#          find . -name 'TEST-*.xml' -exec cp --parents {} ${reportsdir} \;
       - name: Upload failure Archive (if maven failed)
         uses: actions/upload-artifact@v2
         if: failure()
         with:
-          name: "surefire-reports-Build Java ${{ matrix.java }}"
+          name: "surefire-reports-JVM Tests - JDK ${{matrix.java.name}}"
           path: "**/target/surefire-reports/TEST-*.xml"
-#          path: ${{ steps.get-temp-directory.outputs.name }}/surefire-reports
+  jvm-green:
+    runs-on: ubuntu-latest
+    name: JVM Tests - JDK green
+    steps:
+      - uses: actions/checkout@v2
+  jvm-initial:
+    runs-on: ubuntu-latest
+    name: "Initial JDK 11 Build"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: exit 1
+  native-green:
+    runs-on: ubuntu-latest
+    name: Native Tests - Green
+    steps:
+      - uses: actions/checkout@v2
+  native-red:
+    runs-on: ubuntu-latest
+    name: Native Tests - Red
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: exit 1
