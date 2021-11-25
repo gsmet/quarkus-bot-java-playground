@@ -90,7 +90,7 @@ triage:
       directories:
         - extensions/elasticsearch
         - integration-tests/elasticsearch
-    - labels: [area/hibernate-validator]
+    - labels: [area/hibernate-validator, test-other-label]
       titleBody: "hibernate.validator"
       notify: [gsmet, non-existing-user-hv]
       directories:
