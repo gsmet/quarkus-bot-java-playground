@@ -3,7 +3,7 @@
 # https://github.com/quarkusio/quarkus-bot/#triage-issues
 features: [ALL]
 workflowRunAnalysis:
-  workflowName: "Quarkus CI"
+  workflows: ["Quarkus CI"]
 triage:
   discussions:
     monitoredCategories: [33522033]
