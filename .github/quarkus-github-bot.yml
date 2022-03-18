@@ -6,7 +6,7 @@ workflowRunAnalysis:
   workflows: ["Quarkus CI"]
 triage:
   discussions:
-    monitoredCategories: [33522033]
+    monitoredCategories: [3946478]
   rules:
     - labels: [area/amazon-lambda]
       title: "lambda"
