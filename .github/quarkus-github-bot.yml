@@ -2,6 +2,7 @@
 # The format of this file is documented here:
 # https://github.com/quarkusio/quarkus-bot/#triage-issues
 features: [ALL]
+unknown-property: true
 workflowRunAnalysis:
   workflows: ["Quarkus CI"]
 triage:
