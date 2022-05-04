@@ -33,11 +33,11 @@ jobs:
       - name: Create file
         shell: bash
         run: |
-          echo -n 25363 > report-issue-number
+          echo -n 125 > report-issue-number
       - name: Upload report issue number
         uses: actions/upload-artifact@v2
         with:
-          name: report-issue-number-25363
+          name: report-issue-number-125
           path: report-issue-number
           retention-days: 1
   build:
