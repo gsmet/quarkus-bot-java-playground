@@ -96,3 +96,14 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run a one-line script
         run: exit 1
+  summary:
+    runs-on: ubuntu-latest
+    name: Create job summary
+    needs: [build,jvm-green,jvm-initial,native-green,native-red]
+    if: always()
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+      - name: Display structure of downloaded files
+        run: ls -R artifacts
