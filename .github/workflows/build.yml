@@ -98,7 +98,7 @@ jobs:
         run: exit 1
   summary:
     runs-on: ubuntu-latest
-    name: Create job summary
+    name: Build report
     needs: [build,jvm-green,jvm-initial,native-green,native-red]
     if: always()
     steps:
