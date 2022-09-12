@@ -1,0 +1,8 @@
+labels:
+  needTriage: "triage/needs-triage"
+participants:
+  - username: "yrodiere"
+    when: ["MONDAY"]
+    triage:
+      maxIssues: 2
+    
