@@ -1,8 +1,10 @@
+notifications:
+  createIssues:
+    repository: "yrodiere/quarkus-github-playground-lottery-reports"
 labels:
-  needTriage: "triage/needs-triage"
+  needsTriage: "triage/needs-triage"
 participants:
   - username: "yrodiere"
     when: ["MONDAY"]
     triage:
-      maxIssues: 2
-    
+      maxIssues: 3
