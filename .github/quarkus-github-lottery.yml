@@ -1,6 +1,10 @@
 notifications:
   createIssues:
     repository: "yrodiere/quarkus-github-playground-lottery-reports"
+buckets:
+  triage:
+    needsTriageLabel: "triage/needs-triage"
+    notificationExpiration: P3D
 labels:
   needsTriage: "triage/needs-triage"
 participants:
