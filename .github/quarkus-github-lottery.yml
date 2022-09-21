@@ -9,6 +9,6 @@ labels:
   needsTriage: "triage/needs-triage"
 participants:
   - username: "yrodiere"
-    days: ["MONDAY"]
+    days: ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"]
     triage:
       maxIssues: 3
