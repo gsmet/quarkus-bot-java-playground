@@ -5,7 +5,7 @@ if (System.env.GITHUB_ACTIONS) {
 
     if (System.env.GITHUB_EVENT_NAME == "pull_request" && System.env.GITHUB_EVENT_PATH != null) {
         File eventJsonFile = new File(System.env.GITHUB_EVENT_PATH)
-        if (Files.exists(eventJsonFile)) {
+        if (eventJsonFile.exists()) {
             def eventJson = new JsonSlurper().parse(eventJsonFile)
             def prNumber = eventJson.pull_request?.number
 
