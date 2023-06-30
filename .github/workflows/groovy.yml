@@ -8,7 +8,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 env:
-  PULL_REQUEST_NUMBER_ENV_GLOBAL: ${{ github.event.pull_request.number }}
+  PULL_REQUEST_NUMBER_ENV_GLOBAL: ${{ github.event.number }}
 jobs:
   build:
     # The type of runner that the job will run on
@@ -28,4 +28,4 @@ jobs:
           groovy .github/test.groovy
         shell: bash
         env:
-          PULL_REQUEST_NUMBER_ENV_LOCAL: ${{ github.event.pull_request.number }}
+          PULL_REQUEST_NUMBER_ENV_LOCAL: ${{ github.event.number }}
