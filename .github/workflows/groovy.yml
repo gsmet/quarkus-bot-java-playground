@@ -23,8 +23,8 @@ jobs:
       - name: Run Groovy
         run: |
           curl -s "https://get.sdkman.io" | bash
-          sdk install groovy
           source "/home/runner/.sdkman/bin/sdkman-init.sh"
+          sdk install groovy
           groovy .github/test.groovy
         shell: bash
         env:
