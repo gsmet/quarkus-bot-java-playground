@@ -7,9 +7,9 @@ on:
   push:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+env:
+  PULL_REQUEST_NUMBER_ENV_GLOBAL: totoz
 jobs:
-  env:
-    PULL_REQUEST_NUMBER_ENV_GLOBAL: totoz
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
