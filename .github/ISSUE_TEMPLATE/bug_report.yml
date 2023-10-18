@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a bug in Quarkus. \:warning\: Please report security issues to [security at quarkus dot io instead](https://github.com/quarkusio/quarkus/security/policy).
+description: "Report a bug in Quarkus. :warning: Please report security issues to [security at quarkus dot io instead](https://github.com/quarkusio/quarkus/security/policy)."
 labels: kind/bug
 body:
   - type: textarea
