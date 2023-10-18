@@ -52,8 +52,8 @@ jobs:
             name: "JDK11"
           }
           - {
-            version: 16,
-            name: "JDK16"
+            version: 17,
+            name: "JDK17"
           }
 
       fail-fast: false
