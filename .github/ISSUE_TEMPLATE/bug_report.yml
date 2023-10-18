@@ -7,7 +7,7 @@ body:
       value: |
         **To report a security vulnerability, please send an email to `security at quarkus dot io` with all the details.**
         
-        :warning: Do **NOT** create a public issue on GitHub. See our [security policy](https://github.com/quarkusio/quarkus/security/policy) for more details.
+        :warning: Do **NOT** create a public issue on GitHub for security vulnerabilities. See our [security policy](https://github.com/quarkusio/quarkus/security/policy) for more details. :warning:
   - type: textarea
     id: description
     validations:
