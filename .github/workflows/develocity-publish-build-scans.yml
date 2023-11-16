@@ -1,0 +1,26 @@
+name: Develocity - Publish Maven Build Scans
+
+on:
+  workflow_run:
+    workflows: [ "Quarkus CI" ]
+    types: [ completed ]
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  publish-build-scans:
+    if: github.repository == 'quarkusio/quarkus' && github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion != 'cancelled'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      checks: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inject build scans in reports
+        uses: quarkusio/action-helpers@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          action: inject-build-scans
+          workflow-run-id: ${{ github.event.workflow_run.id }}

@@ -1,0 +1,200 @@
+{
+    "prNumber":36961,
+    "builds":[
+       {
+          "jobName":"JVM Tests - JDK 11",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/a5blr2wdztpck"
+       },
+       {
+          "jobName":"JVM Tests - JDK 17",
+          "status":"failure",
+          "buildScanLink":"https://ge.quarkus.io/s/5mjgymi7nf6n4"
+       },
+       {
+          "jobName":"Native Tests - Data4",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/iszy7kalminy6"
+       },
+       {
+          "jobName":"Native Tests - DevTools Integration Tests",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/epia7m3odrol2"
+       },
+       {
+          "jobName":"Maven Tests - JDK 11 Windows",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/t4aczvt2aoyfo"
+       },
+       {
+          "jobName":"Native Tests - Data5",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/y64rfrck4v5pa"
+       },
+       {
+          "jobName":"Native Tests - Data1",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/zgac47a7h6kd6"
+       },
+       {
+          "jobName":"Native Tests - HTTP",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/dxa73uhrty7cm"
+       },
+       {
+          "jobName":"Native Tests - Main",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/bay5d5zvo4mgs"
+       },
+       {
+          "jobName":"Kubernetes Tests - JDK 11 Windows",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/5htlvjl3rytqo"
+       },
+       {
+          "jobName":"Devtools Tests - JDK 11 Windows",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/ccrry6ezrr4o6"
+       },
+       {
+          "jobName":"Native Tests - Data3",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/rddacfj56h2hy"
+       },
+       {
+          "jobName":"Native Tests - Cache",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/thlq74uc4xf3w"
+       },
+       {
+          "jobName":"Native Tests - Misc2",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/bcnfkayxhrezy"
+       },
+       {
+          "jobName":"Native Tests - Spring",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/5ifwx6sffl4dg"
+       },
+       {
+          "jobName":"Maven Tests - JDK 11",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/4xfgorxn3nkjw"
+       },
+       {
+          "jobName":"Gradle Tests - JDK 11 Windows",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/b4eoxjvawoy2y"
+       },
+       {
+          "jobName":"Native Tests - Security2",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/gtfjqkklttcw2"
+       },
+       {
+          "jobName":"Native Tests - Virtual Thread - Messaging",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/kjubo3h7soaag"
+       },
+       {
+          "jobName":"Native Tests - Virtual Thread - Main",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/znqxtapks64qy"
+       },
+       {
+          "jobName":"Kubernetes Tests - JDK 17",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/io4xaosdj2nic"
+       },
+       {
+          "jobName":"Kubernetes Tests - JDK 11",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/fwzad3vm6ht7w"
+       },
+       {
+          "jobName":"Native Tests - Messaging1",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/grz7q3oszn36m"
+       },
+       {
+          "jobName":"Native Tests - Security3",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/viq6xi76ewbrs"
+       },
+       {
+          "jobName":"Native Tests - Windows - RESTEasy Jackson",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/j2znyd6rqoy6k"
+       },
+       {
+          "jobName":"Devtools Tests - JDK 11",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/kxyfbk3udsczk"
+       },
+       {
+          "jobName":"Native Tests - Data6",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/e3uwwippzac2a"
+       },
+       {
+          "jobName":"Devtools Tests - JDK 17",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/2vdj2daxhkrqa"
+       },
+       {
+          "jobName":"Native Tests - Misc3",
+          "status":"failure",
+          "buildScanLink":"https://ge.quarkus.io/s/fkfmjvlzhklbi"
+       },
+       {
+          "jobName":"Native Tests - Misc4",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/wpstm43qwnf5o"
+       },
+       {
+          "jobName":"Initial JDK 11 Build",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/pwth2kg4ujq2u"
+       },
+       {
+          "jobName":"Gradle Tests - JDK 11",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/njy5i7v5k5kya"
+       },
+       {
+          "jobName":"Native Tests - Misc1",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/any7ki66ntnmk"
+       },
+       {
+          "jobName":"Native Tests - Data2",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/6t53jhahfwgqq"
+       },
+       {
+          "jobName":"Native Tests - Amazon",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/x44ccg7m7ucym"
+       },
+       {
+          "jobName":"Native Tests - Messaging2",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/hrb6wurkfpsge"
+       },
+       {
+          "jobName":"Native Tests - Security1",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/bo5l3yt65txf6"
+       },
+       {
+          "jobName":"Native Tests - AWT, ImageIO and Java2D",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/imcvtq6r3qosa"
+       },
+       {
+          "jobName":"Native Tests - Data7",
+          "status":"success",
+          "buildScanLink":"https://ge.quarkus.io/s/hvbupylhbl6ri"
+       }
+    ]
+ }
