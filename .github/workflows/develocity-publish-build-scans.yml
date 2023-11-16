@@ -11,7 +11,7 @@ defaults:
 
 jobs:
   publish-build-scans:
-    if: github.repository == 'quarkusio/quarkus' && github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion != 'cancelled'
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion != 'cancelled'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
