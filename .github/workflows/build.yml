@@ -81,7 +81,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: exit 1
+        run: exit 0
   native-green:
     runs-on: ubuntu-latest
     name: Native Tests - Green
@@ -93,7 +93,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: exit 1
+        run: exit 0
   summary:
     runs-on: ubuntu-latest
     name: Create job summary
