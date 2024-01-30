@@ -1,11 +1,14 @@
 package io.github.gsmet.playground.module3;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+
+import java.util.Random;
 
 import org.junit.jupiter.api.Test;
 
 public class Module3Test2Test {
+
+    private static final Random RANDOM = new Random();
 
     @Test
     public void testSuccess1() {
@@ -14,6 +17,16 @@ public class Module3Test2Test {
 
     @Test
     public void testSuccess2() {
-        assertTrue(true);
+        assertTrue(RANDOM.nextInt(2) % 2 == 0);
+    }
+
+    @Test
+    public void testSuccess3() {
+        assertTrue(RANDOM.nextInt(2) % 2 == 0);
+    }
+
+    @Test
+    public void testSuccess4() {
+        assertTrue(RANDOM.nextInt(2) % 2 == 0);
     }
 }
