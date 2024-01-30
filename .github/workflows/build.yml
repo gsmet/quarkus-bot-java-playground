@@ -66,7 +66,7 @@ jobs:
         run: mvn -B clean install --fail-at-end
       - name: Upload failure Archive (if maven failed)
         uses: actions/upload-artifact@v2
-        if: failure()
+        if: always()
         with:
           name: "build-reports-JVM Tests - JDK ${{matrix.java.version}}"
           path: "**/target/surefire-reports/TEST-*.xml"
@@ -81,7 +81,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: exit 1
+        run: exit 0
   native-green:
     runs-on: ubuntu-latest
     name: Native Tests - Green
@@ -93,7 +93,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: exit 1
+        run: exit 0
   summary:
     runs-on: ubuntu-latest
     name: Create job summary
