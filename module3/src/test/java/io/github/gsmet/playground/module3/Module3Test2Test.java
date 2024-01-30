@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 
 public class Module3Test2Test {
 
+    private static final Random RANDOM = new Random();
+
     @Test
     public void testSuccess1() {
         assertTrue(true);
@@ -15,6 +17,16 @@ public class Module3Test2Test {
 
     @Test
     public void testSuccess2() {
-        assertTrue(new Random().nextInt(3) % 2 == 0);
+        assertTrue(RANDOM.nextInt(2) % 2 == 0);
+    }
+
+    @Test
+    public void testSuccess3() {
+        assertTrue(RANDOM.nextInt(2) % 2 == 0);
+    }
+
+    @Test
+    public void testSuccess4() {
+        assertTrue(RANDOM.nextInt(2) % 2 == 0);
     }
 }
