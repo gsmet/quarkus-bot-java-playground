@@ -69,6 +69,7 @@ jobs:
       - name: Build with Maven
         run: mvn -B clean install --fail-at-end
       - name: Prepare report zip
+        if: always()
         run: |
           find . -wholename '**/target/*-reports/TEST-*.xml' -o \
               -wholename 'target/build-report.json' -o \
@@ -77,7 +78,7 @@ jobs:
               | zip -@ build-reports.zip
       - name: Upload failure Archive (if maven failed)
         uses: actions/upload-artifact@v4
-        if: failure()
+        if: always()
         with:
           name: "build-reports-JVM Tests - JDK ${{matrix.java.version}}"
           path: "build-reports.zip"
