@@ -78,7 +78,7 @@ jobs:
               'target/gradle-build-scan-url.txt' \
               LICENSE.txt
       - name: Prepare report zip
-        if: always() && runner.os == 'Windows'
+        if: always()
         run: |
           7z a -tzip build-reports.zip -r \
               '**/target/*-reports/TEST-*.xml' \
