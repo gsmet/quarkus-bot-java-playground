@@ -46,9 +46,10 @@ jobs:
           retention-days: 1
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
         # test against latest update of each major Java version, as well as specific updates of LTS versions:
         java:
           - {
@@ -58,8 +59,8 @@ jobs:
             version: 17,
           }
 
-      fail-fast: false
-    name: JVM Tests - JDK ${{matrix.java.version}}
+    runs-on: ${{matrix.os}}
+    name: JVM Tests - JDK ${{matrix.java.version}} - ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
       - name: Setup java
@@ -69,18 +70,21 @@ jobs:
       - name: Build with Maven
         run: mvn -B clean install --fail-at-end
       - name: Prepare report zip
-        if: always()
+        if: always() && runner.os != 'Windows'
         run: |
           zip -R build-reports.zip \
               '**/target/*-reports/TEST-*.xml' \
               'target/build-report.json' \
               'target/gradle-build-scan-url.txt' \
               LICENSE.txt
-          #find . -wholename '**/target/*-reports/TEST-*.xml' -o \
-          #    -wholename 'target/build-report.json' -o \
-          #    -wholename 'target/gradle-build-scan-url.txt' -o \
-          #    -name LICENSE.txt \
-          #    | zip -@ build-reports.zip
+      - name: Prepare report zip
+        if: always() && runner.os == 'Windows'
+        run: |
+          7z a -tzip build-reports.zip -r \
+              '**/target/*-reports/TEST-*.xml' \
+              'target/build-report.json' \
+              'target/gradle-build-scan-url.txt' \
+              LICENSE.txt
       - name: Upload failure Archive (if maven failed)
         uses: actions/upload-artifact@v4
         if: always()
