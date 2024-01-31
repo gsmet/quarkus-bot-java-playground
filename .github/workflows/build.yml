@@ -8,6 +8,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: bash
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -64,12 +68,19 @@ jobs:
           java-version: ${{ matrix.java.version }}
       - name: Build with Maven
         run: mvn -B clean install --fail-at-end
+      - name: Prepare report zip
+        run: |
+          find . -wholename '**/target/*-reports/TEST-*.xml' -o \
+              -wholename 'target/build-report.json' -o \
+              -wholename 'target/gradle-build-scan-url.txt' -o \
+              -name LICENSE.txt \
+              | zip -@ build-reports.zip
       - name: Upload failure Archive (if maven failed)
         uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: "build-reports-JVM Tests - JDK ${{matrix.java.version}}"
-          path: "**/target/surefire-reports/TEST-*.xml"
+          path: "build-reports.zip"
   jvm-green:
     runs-on: ubuntu-latest
     name: JVM Tests - JDK green
