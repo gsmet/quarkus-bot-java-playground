@@ -70,14 +70,6 @@ jobs:
       - name: Build with Maven
         run: mvn -B clean install --fail-at-end
       - name: Prepare report zip
-        if: always() && runner.os != 'Windows'
-        run: |
-          zip -R build-reports.zip \
-              '**/target/*-reports/TEST-*.xml' \
-              'target/build-report.json' \
-              'target/gradle-build-scan-url.txt' \
-              LICENSE.txt
-      - name: Prepare report zip
         if: always()
         run: |
           7z a -tzip build-reports.zip -r \
@@ -89,7 +81,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: "build-reports-JVM Tests - JDK ${{matrix.java.version}}"
+          name: "build-reports-JVM Tests - JDK ${{matrix.java.version}} - ${{matrix.os}}"
           path: "build-reports.zip"
   jvm-green:
     runs-on: ubuntu-latest
