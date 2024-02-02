@@ -2,7 +2,9 @@
 # The format of this file is documented here:
 # https://github.com/quarkusio/quarkus-bot/#triage-issues
 features: [ALL]
-unknown-property: true
+develocity:
+  enabled: true
+  url: "https://ge.quarkus.io/"
 workflowRunAnalysis:
   workflows: ["Quarkus CI"]
 triage:
