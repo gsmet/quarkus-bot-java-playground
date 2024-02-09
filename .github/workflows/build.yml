@@ -21,7 +21,7 @@ jobs:
         run: |
           echo -n ${{ github.event.number }} > pull-request-number
       - name: Upload pull request number
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: pull-request-number-${{ github.event.number }}
           path: pull-request-number
@@ -35,7 +35,7 @@ jobs:
         run: |
           echo -n 125 > report-issue-number
       - name: Upload report issue number
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: report-issue-number-125
           path: report-issue-number
@@ -65,7 +65,7 @@ jobs:
       - name: Build with Maven
         run: mvn -B clean install --fail-at-end
       - name: Upload failure Archive (if maven failed)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: "build-reports-JVM Tests - JDK ${{matrix.java.version}}"
