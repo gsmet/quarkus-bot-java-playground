@@ -1,0 +1,26 @@
+name: Quarkus CI
+
+# Controls when the action will run.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  attach-pr-id:
+    runs-on: ubuntu-latest
+    name: Attach pull request number
+    steps:
+      - name: maintain-one-comment
+        uses: quarkusio/action-helpers@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          action: maintain-one-comment
+          pr-number: 166
+          body: |
+            🎊 PR Preview for ${{ github.event.number }}
+
+            - Images of blog posts older than 3 months are not available.
+            - Newsletters older than 3 months are not available.
+
+            <img width="300" src="https://user-images.githubusercontent.com/507615/90250366-88233900-de6e-11ea-95a5-84f0762ffd39.png">
+          body-marker: <!-- My body marker -->
