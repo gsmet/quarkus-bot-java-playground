@@ -1,4 +1,4 @@
-name: Quarkus CI
+name: Maintain one comment
 
 # Controls when the action will run.
 on:
@@ -17,7 +17,7 @@ jobs:
           action: maintain-one-comment
           pr-number: 166
           body: |
-            🎊 PR Preview for ${{ github.event.number }}
+            🎊 PR Preview for ${{ github.run_id }}
 
             - Images of blog posts older than 3 months are not available.
             - Newsletters older than 3 months are not available.
