@@ -87,6 +87,12 @@ jobs:
     name: Native Tests - Green
     steps:
       - uses: actions/checkout@v2
+      - run: |
+        echo ${{ github.head_ref }}
+        echo ${{ github.base_ref }}
+        echo ${{ github.ref_name }}
+        echo ${{ github.head_ref || github.ref_name }}
+        echo ${{ github.base_ref || github.ref_name }}
   native-red:
     runs-on: ubuntu-latest
     name: Native Tests - Red
