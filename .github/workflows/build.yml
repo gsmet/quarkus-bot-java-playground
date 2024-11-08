@@ -8,9 +8,8 @@ on:
   pull_request:
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run is made up of one or more jobs that can run sequentially or in paralle
 jobs:
-  # This workflow contains a single job called "build"
   attach-pr-id:
     runs-on: ubuntu-latest
     name: Attach pull request number
@@ -68,7 +67,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: "build-reports-JVM Tests - JDK ${{matrix.java.version}}"
+          name: "build-reports-${{ github.run_attempt }}-JVM Tests - JDK ${{matrix.java.version}}"
           path: "**/target/surefire-reports/TEST-*.xml"
   jvm-green:
     runs-on: ubuntu-latest
