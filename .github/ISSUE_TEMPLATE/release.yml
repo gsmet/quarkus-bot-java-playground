@@ -1,0 +1,61 @@
+name: Release
+description: Perform a Quarkus release
+labels: kind/release
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form will perform a Quarkus release. Use with care and only if you know what you are doing.
+
+        **IMPORTANT** Only Quarkus releasers can actually start a release.
+  - type: input
+    id: branch
+    validations:
+      required: true
+    attributes:
+      label: Branch
+      description: >-
+        The name of the branch to release (e.g. `3.5`). Do **NOT** release from `main`.
+  - type: input
+    id: qualifier
+    attributes:
+      label: Qualifier
+      description: >-
+        The optional **preview** qualifier for the release (for instance `CR1`). The `Final` qualifier is added automatically for branches that require it.
+  - type: markdown
+    attributes:
+      value: ---
+  - type: checkboxes
+    id: emergency
+    attributes:
+      label: Emergency release
+      description: >-
+        Whether the release is an emergency release (e.g. `3.17.7.1`). Only for LTS branches with regular release cadence.
+      options:
+        - label: This release is an emergency release.
+          required: false
+  - type: input
+    id: emergency-release-core-branch
+    validations:
+      required: false
+    attributes:
+      label: Emergency release Core branch
+      description: >-
+        Only useful when doing an emergency release and optional: points the Core build to a specific branch of the Core repository. Useful when the branch already contains changes we don't want in the emergency release. For an emergency release on top of `3.20.2`, name the branch `3.20.2-emergency` and reuse the same branch for all emergency releases on top of `3.20.2`.
+  - type: input
+    id: origin-branch
+    validations:
+      required: false
+    attributes:
+      label: Origin branch
+      description: >-
+        Only useful when doing a `CR1`. The branch from which we create the versioned branch. Defaults to `main` and should only be set to the previous versioned branch when doing a `CR1` for a LTS release (as we will branch from the previous versioned branch).
+  - type: checkboxes
+    id: major
+    attributes:
+      label: Major version
+      description: >-
+        Whether the release is a major new version (e.g. `4.0.0`). Use with care.
+      options:
+        - label: This release is a major version.
+          required: false
