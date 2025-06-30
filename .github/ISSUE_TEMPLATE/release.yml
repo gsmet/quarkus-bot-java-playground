@@ -24,7 +24,9 @@ body:
         The optional **preview** qualifier for the release (for instance `CR1`). The `Final` qualifier is added automatically for branches that require it.
   - type: markdown
     attributes:
-      value: ---
+      value: |
+        <br>
+        ---
   - type: checkboxes
     id: emergency
     attributes:
