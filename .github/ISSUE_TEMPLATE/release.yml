@@ -27,8 +27,8 @@ body:
       value: |
         <br>
 
-        ### Emergency release
         ---
+        ### Emergency release
   - type: checkboxes
     id: emergency
     attributes:
@@ -51,8 +51,8 @@ body:
       value: |
         <br>
 
-        ### LTS release (CR1 only)
         ---
+        ### LTS release (CR1 only)
   - type: input
     id: origin-branch
     validations:
@@ -66,8 +66,8 @@ body:
       value: |
         <br>
 
-        ### Major version
         ---
+        ### Major version
   - type: checkboxes
     id: major
     attributes:
