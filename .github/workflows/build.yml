@@ -8,6 +8,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: bash
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -42,9 +46,10 @@ jobs:
           retention-days: 1
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
         # test against latest update of each major Java version, as well as specific updates of LTS versions:
         java:
           - {
@@ -54,8 +59,8 @@ jobs:
             version: 17,
           }
 
-      fail-fast: false
-    name: JVM Tests - JDK ${{matrix.java.version}}
+    runs-on: ${{matrix.os}}
+    name: JVM Tests - JDK ${{matrix.java.version}} - ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
       - name: Setup java
@@ -64,12 +69,20 @@ jobs:
           java-version: ${{ matrix.java.version }}
       - name: Build with Maven
         run: mvn -B clean install --fail-at-end
+      - name: Prepare report zip
+        if: always()
+        run: |
+          7z a -tzip build-reports.zip -r \
+              '**/target/*-reports/TEST-*.xml' \
+              'target/build-report.json' \
+              'target/gradle-build-scan-url.txt' \
+              LICENSE.txt
       - name: Upload failure Archive (if maven failed)
         uses: actions/upload-artifact@v4
-        if: failure()
+        if: always()
         with:
-          name: "build-reports-JVM Tests - JDK ${{matrix.java.version}}"
-          path: "**/target/surefire-reports/TEST-*.xml"
+          name: "build-reports-JVM Tests - JDK ${{matrix.java.version}} - ${{matrix.os}}"
+          path: "build-reports.zip"
   jvm-green:
     runs-on: ubuntu-latest
     name: JVM Tests - JDK green
